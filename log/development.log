@@ -216,3 +216,10 @@ Migrating to AddDescriptionColimnToItems (20190822104510)
   [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
   [1m[36mItem Update (1.7ms)[0m  [1m[33mUPDATE "items" SET "price" = ?, "updated_at" = ? WHERE "items"."id" = ?[0m  [["price", 500.0], ["updated_at", "2019-08-22 11:41:33.782811"], ["id", 1]]
   [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("price", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["price", -1.0], ["created_at", "2019-08-22 11:46:23.722406"], ["updated_at", "2019-08-22 11:46:23.722406"]]
+  [1m[35m (10.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
