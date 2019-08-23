@@ -3,10 +3,12 @@ class Item < ApplicationRecord
 validates :price, { numericality: {greater_than: 0, allow_nill: true} }
 validates :name, :description, presence: true
 
-after_initialize { puts "initialized" }# Item.new; Item.first
+belongs_to :category
 
-after_save { puts "saved" } #Item.save; Item.create
-after_create { puts "created" }
-after_update { puts "updated" }
-after_destroy { puts "destroyed" }# item.destroy
+after_initialize { }# Item.new; Item.first
+
+after_save { } #Item.save; Item.create
+after_create {  category.inc(:items_count, 1) }
+after_update { }
+after_destroy { category.inc(:items_count, -1 }# item.destroy
 end
